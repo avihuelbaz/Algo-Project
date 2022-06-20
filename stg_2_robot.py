@@ -40,7 +40,7 @@ def buy_stg_2(cash):
     df = df[df['Name'] != 'MOS']
 
     ib = IB()
-    ib.connect('127.0.0.1', 7497, clientId=4)
+    ib.connect([IP], [PORT], clientId=[])
     amount = 10
     stock_returns = df.groupby('Name').apply(calculate_returns).sort_values(ascending=False)
     stock_returns_table = stock_returns.reset_index()
